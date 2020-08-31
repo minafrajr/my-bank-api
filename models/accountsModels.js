@@ -19,6 +19,9 @@ export default (mongoose) => {
     },
   });
 
+  //terceiro parametro para manter no singular o nome do documento
   const accounts = mongoose.model('accounts', schema, 'accounts');
+
+
   return accounts;
 };
