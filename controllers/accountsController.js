@@ -81,7 +81,7 @@ const getBalance = async (req, res) => {
     res.status(500).send('Nao foi possível fazer o depósito! Erro: ' + error)
   }
 }
-
+//deletando a conta
 const deleteAccount = async (req, res) => {
   const { agencia, conta } = req.params
 
@@ -153,6 +153,7 @@ const transfer = async (req, res) => {
       .send('Erro ao tentar transferir entre contas! Erro: ' + error)
   }
 }
+//média dos saldos das contas
 const averageBalance = async (req, res) => {
   const agenc = req.params.ag
 
