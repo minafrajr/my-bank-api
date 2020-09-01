@@ -1,9 +1,19 @@
-import express from 'express'
-import accountsController from '../controllers/accountsController.js'
+import express from 'express';
+import accountsController from '../controllers/accountsController.js';
 
-const accountsRouter = express()
-accountsRouter.use(express.json())
+const accountsRouter = express();
+accountsRouter.use(express.json());
 
+//prettier-ignore
+accountsRouter.get('/', async(req, res) => {
+    try {
+        res.send("Bem vindo")
+        
+    } catch (error) {
+        res.status(500).send()
+    }
+})
+//prettier-ignore
 accountsRouter.get('/accounts', accountsController.getAll)
 //prettier-ignore
 accountsRouter.get('/accounts/saldo/:agencia/:conta',  accountsController.getBalance);
@@ -24,4 +34,4 @@ accountsRouter.put('/accounts/transfer/:contaOrigem/:contaDestino/:valor',accoun
 //prettier-ignore
 accountsRouter.put('/accounts/privateaccounts',accountsController.privateAccounts);
 
-export { accountsRouter }
+export { accountsRouter };
