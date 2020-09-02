@@ -7,7 +7,7 @@ accountsRouter.use(express.json());
 //prettier-ignore
 accountsRouter.get('/', async(req, res) => {
     try {
-        res.send("Bem vindo")
+        res.send("Bem vindo à primeira API construída em Node.js")
         
     } catch (error) {
         res.status(500).send()
