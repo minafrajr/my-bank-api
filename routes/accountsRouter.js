@@ -7,10 +7,10 @@ accountsRouter.use(express.json());
 //prettier-ignore
 accountsRouter.get('/', async(req, res) => {
     try {
-        res.send("Bem vindo à primeira API construída em Node.js")
+        res.send("Bem vindo à primeira API construída em Node.js\n Curso FullStack Developer")
         
     } catch (error) {
-        res.status(500).send()
+        res.status(500).send('Ocorreu um erro: '+ error)
     }
 })
 //prettier-ignore
